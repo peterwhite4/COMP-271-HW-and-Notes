@@ -1,0 +1,68 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 5,
+  "metadata": {
+    "language_info": {
+      "name": "java"
+    }
+  },
+  "cells": [
+    {
+      "id": "d725e441-6095-4e5b-b633-0a51a92c8d25",
+      "cell_type": "markdown",
+      "source": "Linked List for Java",
+      "metadata": {
+        "language": "markdown",
+        "id": "d725e441-6095-4e5b-b633-0a51a92c8d25"
+      }
+    },
+    {
+      "id": "84003c66-6891-44aa-9598-d11f4f12036a",
+      "cell_type": "markdown",
+      "source": "OBJECTS are...\n1. Identifier - (Name)\n2. Behavior - (Methods in Class)\n3. State",
+      "metadata": {
+        "language": "markdown",
+        "id": "84003c66-6891-44aa-9598-d11f4f12036a"
+      }
+    },
+    {
+      "id": "21bc38f3-4a6c-452d-aafc-71051b18dc28",
+      "cell_type": "code",
+      "source": "// Java use camelCase\n\npublic class Node {\n\n    // Fields\n    private String value;\n    private Node next;\n\n    /* Block comment. Free text blah blah blah */\n\n    /** Plain constructor \n     * \n     * same as python __init__ method\n     * \n     * use \"this\" in Java instead of \"self\" in Python\n    */\n    public Node(String value) {\n        this.value = value; \n        this.next = null;\n    }\n\n    /** Text representation so that we can print the object\n     * \n     * Same as pyton __str__ method\n     */\n    public String toString() { \n        return this.value;\n    } // method toString\n\n    /**\n     * Mutator for link to next object\n     * \n     * @param nextNode to point next\n     * \n     */\n    public void setNext(Node nextNode) { // void = return NONE\n        this.next = nextNode;\n    } // method setNext\n\n    /**\n     * Accessor for link to next node; it may\n     * return null if current node points to nowhere\n     * \n     * @return next node (could be null)\n     * \n     */\n    public Node getNext(){\n        return this.next;\n    }\n}",
+      "metadata": {
+        "language": "java"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "id": "3aed9164-6cfb-4c37-8537-0b07633df367",
+      "cell_type": "code",
+      "source": "public class LinkedList {\n\n    private Node head;\n    private Node tail;\n    private int count;\n\n    public LinkedList() {\n        this.head = null;\n        this.tail = null;\n        this.count = 0;\n    }\n\n    /**\n     * Add a node to the Linked List\n     * \n     * @param value String for which we create a new node and append\n     * it to the end of the list.\n     * \n     */\n    public void addNode (String value) {\n        // Create the new node:\n        Node newNode = new Node(value);\n        // If list is empty, new node becomes head,\n        // otherwise, we appended to the tail node\n        if (this.count == 0) {\n            this.head = newNode;\n        } else {\n            this.tail.setNext(newNode);\n        }\n         this.tail = newNode;\n            this.count++; // same as this.count = this.count+1\n    }\n}",
+      "metadata": {
+        "language": "java"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "id": "fbd22c30-5006-4d04-ba25-1c42e31f9074",
+      "cell_type": "markdown",
+      "source": "PART B HELP (in java)",
+      "metadata": {
+        "language": "markdown",
+        "id": "fbd22c30-5006-4d04-ba25-1c42e31f9074"
+      }
+    },
+    {
+      "id": "352dfa3d-cb56-44a7-9d20-6a4a0c466502",
+      "cell_type": "code",
+      "source": "public class BST_Array {\n\n    private String[] words;\n    private int capacity;\n    private int size;\n\n    public BST_Array(int expectedNumberOfWords){\n        // 2^n - 1\n        this.capacity = (int) Math.pow(2, expectedNumberOfWords) - 1;\n        this.words = new String[capacity];\n        this.size = 0;\n\n    }\n        /* To compare objects, or anything in java use compare.To\n        for example if you do \"Peter\".compareTo(\"Anna\")\n        If Peter is > than Anna it will be a POSITIVE INTEGER\n        If not, it will be NEGATIVE\n        If equal it will be 0\n        */\n\n    public void insert(String word) {\n        if (this.size < this.capacity) {\n            // Safe to operate\n            if (this.words[0] == null){\n                // Object is empty, we are now placing the first word in it\n                this.words[0] = word;\n            } else {\n                // Need to go left/right until I find an empty spot\n                // First I need some aux methods\n\n            }\n            }\n        }\n    }\n\n    // private so it is only internal = _int in py\n    private int left(int parent) {\n        return 2 * parent + 1;\n    }\n\n    private int right (int parent) {\n        // return 2 * parent + 2 OR...\n        return this.left(parent) + 1\n    }\n}",
+      "metadata": {
+        "language": "java"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
